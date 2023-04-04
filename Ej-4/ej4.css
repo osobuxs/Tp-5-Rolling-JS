@@ -1,0 +1,20 @@
+
+body{background-color: rgb(5, 61, 80);}
+#fecha {
+    margin-top: 15px;
+    font-size: 3rem;
+    color: antiquewhite;
+    font-weight: bold;
+    background-color: rgb(30, 38, 78);
+    height: auto;
+    border-radius: 20px;
+}
+
+#hora {
+    font-size: 4rem;
+    color: antiquewhite;
+    background-color: rgb(30, 38, 78);
+    margin-top: 5px;
+    font-weight: bold;
+    border-radius: 20px;
+}

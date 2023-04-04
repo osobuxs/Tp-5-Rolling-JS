@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clase Persona</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Ejercicio 2</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html" onclick="history.back()"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-left-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+                />
+              </svg>
+              Volver al inicio</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Clase Persona</h1>
+      <form id="formulario">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="edad">Edad:</label>
+          <input type="number" class="form-control" id="edad" required />
+        </div>
+        <div class="form-group">
+          <label for="dni">DNI:</label>
+          <input type="text" class="form-control" id="dni" required />
+        </div>
+        <div class="form-group">
+          <label for="sexo">Sexo:</label>
+          <select class="form-control" id="sexo" required>
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="peso">Peso:</label>
+          <input type="number" class="form-control" id="peso" required />
+        </div>
+        <div class="form-group">
+          <label for="altura">Altura:</label>
+          <input type="number" class="form-control" id="altura" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Persona</button>
+      </form>
+      <br />
+      <button type="button" class="btn btn-info" id="mostrar-generacion">
+        Mostrar Generación
+      </button>
+      <button type="button" class="btn btn-info" id="es-mayor-de-edad">
+        Es Mayor de Edad
+      </button>
+      <br /><br />
+      <div id="resultado"></div>
+    </div>
+    <script src="ej2.js"></script>
+  </body>
+</html>

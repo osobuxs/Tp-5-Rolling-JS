@@ -13,3 +13,5 @@
 #### [🔗 Ejercicio 5](https://github.com/osobuxs/Tp-5-Rolling-JS/tree/main/Ej-5#readme)
 
 #### [🔗 Ejercicio 6](https://github.com/osobuxs/Tp-5-Rolling-JS/tree/main/Ej-6#readme)
+
+#### [🔗 Ejercicio Extra](https://github.com/osobuxs/Tp-5-Rolling-JS/tree/main/Ejercicio-Extra#readme)

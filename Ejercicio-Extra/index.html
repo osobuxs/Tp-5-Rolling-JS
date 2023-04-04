@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <title>Ejercicio Extra</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Ejercicio Extra</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html" onclick="history.back()"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-arrow-left-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+                />
+              </svg>
+              Volver al inicio</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class="my-5">Juego de Piedra, Papel o Tijera</h1>
+      <div class="d-flex justify-content-between">
+        <button id="piedra" class="btn btn-primary" onclick="jugar('piedra')">
+          Piedra
+        </button>
+        <button id="papel" class="btn btn-secondary" onclick="jugar('papel')">
+          Papel
+        </button>
+        <button id="tijera" class="btn btn-danger" onclick="jugar('tijera')">
+          Tijera
+        </button>
+      </div>
+      <div id="resultado" class="mt-5"></div>
+    </div>
+    <script>
+      let opciones = ["piedra", "papel", "tijera"];
+      let puntajeJugador = 0;
+      let puntajePC = 0;
+
+      function jugar(jugador) {
+        // Desactivar botones
+        document.getElementById("piedra").disabled = true;
+        document.getElementById("papel").disabled = true;
+        document.getElementById("tijera").disabled = true;
+
+        // Generar jugada aleatoria de la PC
+        let jugadaPC = opciones[Math.floor(Math.random() * opciones.length)];
+
+        // Determinar el ganador
+        let resultado;
+        if (jugador === jugadaPC) {
+          resultado = "Empate";
+        } else if (
+          (jugador === "piedra" && jugadaPC === "tijera") ||
+          (jugador === "papel" && jugadaPC === "piedra") ||
+          (jugador === "tijera" && jugadaPC === "papel")
+        ) {
+          resultado = "Ganaste";
+          puntajeJugador++;
+        } else {
+          resultado = "Perdiste";
+          puntajePC++;
+        }
+
+        // Mostrar resultado
+        document.getElementById("resultado").innerHTML = `
+          Jugador eligió ${jugador}.<br>
+          PC eligió ${jugadaPC}.<br>
+          Resultado: ${resultado}.<br>
+          Puntaje: Jugador ${puntajeJugador} - ${puntajePC} PC
+        `;
+
+        // Preguntar si se quiere jugar de nuevo después de 2 segundos
+        setTimeout(function () {
+          let jugarDeNuevo = confirm("¿Quieres jugar de nuevo?");
+          if (jugarDeNuevo) {
+            // Reactivar botones
+            document.getElementById("piedra").disabled = false;
+            document.getElementById("papel").disabled = false;
+            document.getElementById("tijera").disabled = false;
+
+            // Limpiar resultado
+            document.getElementById("resultado").innerHTML = "";
+          }
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

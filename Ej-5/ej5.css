@@ -1,0 +1,9 @@
+#tiempo {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+}
